@@ -2,26 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.hero-background {
+  background-image: url("/hero-bg.svg");
+  background-position: 200% 0;
+  background-repeat: no-repeat;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.shortdesc-bg {
+  background: linear-gradient(95deg, #1D1D1D 0%, #1D1D1D 100%, #1D1D1D 100%);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.about-bg {
+  background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(26, 21, 21, 0.00) 0%, rgba(1, 1, 1, 0.16) 100%), #FFF;
+}
+
+.portfolio-bg {
+  background-image: url("https://images.unsplash.com/photo-1687673718479-68f6549671eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80");
+  background-attachment: fixed;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.input {
+  @apply w-[300px] lg:w-[600px] flex pl-[14px] border-l-[5px] border-b-[5px] focus:outline-none text-[14px] font-bold tracking-[0.90px] text-[#8B8B8B] border-black bg-none
+}
+
+.placeholder-top-left::placeholder {
+  content: attr(placeholder);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(8px, 8px);
 }
