@@ -24,7 +24,7 @@ const HeroSection = () => {
                     </div>
                 </div>
 
-                <div className="w-[583px] absolute -right-[150px] md:right-[80px] lg:right-[60px] xl:right-[150px] bottom-0 lg:max-w-[50%] -z-20">
+                <div className="w-[583px] absolute -right-[90px] md:right-[80px] lg:right-[60px] xl:right-[150px] bottom-0 lg:max-w-[50%] -z-20">
                     <Image
                         src={"/hero-image5.png"}
                         width={835}
