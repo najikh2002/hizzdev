@@ -39,7 +39,7 @@ const PortfolioSection = () => {
                             </div>
                             </div>
                         </div>
-                        <Link href={item.url} className={`${show === item.id ? "translate-y-[70px] lg:translate-y-[400px]" : "translate-y-[400px]"} absolute w-[90px] h-[27px] flex justify-center items-center text-white text-[12px] font-semibold tracking-[1.14px] uppercase border-x-[2px] border-white group-hover:translate-y-[70px] lg:hover:w-[130px] transition-all duration-300 cursor-pointer`}>
+                        <Link href={item.url} className={`${show === item.id ? "translate-y-[70px] lg:translate-y-[400px]" : "translate-y-[400px]"} absolute w-[90px] h-[27px] flex justify-center items-center text-white text-[12px] font-semibold tracking-[1.14px] uppercase border-x-[2px] border-white lg:group-hover:translate-y-[70px] lg:hover:w-[130px] transition-all duration-300 cursor-pointer`}>
                             view 
                         </Link>
                     </div>
