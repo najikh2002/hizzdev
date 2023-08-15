@@ -17,6 +17,7 @@ export default function RootLayout({
       <Head>
         <title>{metadata.title}</title>
         <meta name="keywords" content={metadata.keywords} />
+        <link rel="canonical" href="https://hizzdev.vercel.app/" />
       </Head>
       <body>{children}</body>
     </html>
