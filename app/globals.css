@@ -25,13 +25,9 @@
 }
 
 .input {
-  @apply w-[300px] lg:w-[600px] flex pl-[14px] border-l-[5px] border-b-[5px] focus:outline-none text-[14px] font-bold tracking-[0.90px] text-[#8B8B8B] border-black bg-none
+  @apply w-[300px] lg:w-[600px] flex pl-[14px] border-l-[5px] border-b-[5px] focus:outline-none text-[14px] font-bold tracking-[0.90px] placeholder-[#8B8B8B] text-black border-black bg-none active:invalid:bg-none focus:active:invalid:bg-none focus-within:active:invalid:bg-none
 }
 
-.placeholder-top-left::placeholder {
-  content: attr(placeholder);
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(8px, 8px);
+#dataList {
+  @apply text-black bg-none
 }

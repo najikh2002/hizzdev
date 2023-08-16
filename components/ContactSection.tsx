@@ -1,7 +1,37 @@
+"use client";
+
 import { TitleSection } from "@/components";
 import Image from "next/image";
+import { useRef } from "react";
 
 const ContactSection = () => {
+    const nameRef = useRef<HTMLInputElement>(null);
+    const emailRef = useRef<HTMLInputElement>(null);
+    const phoneRef = useRef<HTMLInputElement>(null);
+    const messageRef = useRef<HTMLTextAreaElement>(null);
+
+    const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        let data = {
+            name: nameRef.current?.value,
+            email: emailRef.current?.value,
+            phone: phoneRef.current?.value,
+            message: messageRef.current?.value,
+        }
+
+        await fetch("api/contact", {
+            method: "POST",
+            headers: {
+                Accept: "application/json , text/plain",
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+        }).then((res) => {
+            if(res.status === 200) console.log("Success");
+        })
+    }
+
     return ( 
         <section className="about-bg" id="contact">
             <div className="flex flex-col justify-center items-center gap-[50px] py-[7%] lg:gap-[74px] lg:px-[25%]">
@@ -16,11 +46,13 @@ const ContactSection = () => {
                     alt=""
                     className="object-contain"
                 />
-                <form action="submit" className="flex flex-col gap-[56px] justify-center items-center">
-                    <input type="text" placeholder="ENTER YOUR NAME" className="input h-[48px]" style={{ background: "none" }} />
-                    <input type="text" placeholder="ENTER YOUR EMAIL" className="input h-[48px]" style={{ background: "none" }} />
-                    <input type="text" placeholder="PHONE NUMBER" className="input h-[48px]" style={{ background: "none" }} />
-                    <textarea placeholder="YOUR MESSAGE" className="input h-[184px] text-start justify-start items-center" style={{ background: "none" }} />
+                <form onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)} className="flex flex-col gap-[56px] justify-center items-center">
+
+                    <input type="text" placeholder="ENTER YOUR NAME" className="input h-[48px]" style={{ background: "none" }} id="name" ref={nameRef} />
+                    <input type="text" placeholder="ENTER YOUR EMAIL" className="input h-[48px]" style={{ background: "none" }} id="email" ref={emailRef} />
+                    <input type="text" placeholder="PHONE NUMBER" className="input h-[48px]" style={{ background: "none" }} id="phone" ref={phoneRef} />
+                    <textarea placeholder="YOUR MESSAGE" className="input h-[184px] text-start justify-start items-center" style={{ background: "none" }} id="message" ref={messageRef} />
+
                     <button type="submit" className="w-[177px] h-[40px] border-x-[4px] border-black uppercase text-[16px] font-bold tracking-[1.6px] lg:hover:w-[197px] transition-all duration-300 lg:cursor-pointer">
                         submit
                     </button>
