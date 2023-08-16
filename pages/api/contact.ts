@@ -7,14 +7,14 @@ export default function contact(req: NextApiRequest, res: NextApiResponse) {
     host: "smtp.gmail.com",
     port: 465,
     auth: {
-        user: "emailkalian01@gmail.com",
-        pass: "edvjoqfxqydghtgw",
+        user: process.env.MY_APP_EMAIL,
+        pass: process.env.MY_APP_PASS
     },
   });
 
   const toHostMailData = {
     from: email,
-    to: "hizbullahnajihan@gmail.com",
+    to: process.env.MY_APP_RECEIVER,
     replyTo: email,
     subject: `Contact submission from ${name}`,
     html: `
