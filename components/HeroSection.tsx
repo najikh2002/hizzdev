@@ -16,7 +16,7 @@ const HeroSection = () => {
                     <div className="flex gap-8">
                         {socialIcons.map((item) => (
                             <div className="p-[10px] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] bg-black/20 hover:opacity-75 transition-all duration-300 rounded-md hover:-translate-y-1 transform" key={item.name}>
-                                <Link href={item.url}>
+                                <Link href={item.url} legacyBehavior>
                                     <a target="_blank" rel="noopener noreferrer">
                                         {React.cloneElement(item.icon, { size: item.size })}
                                     </a>    
