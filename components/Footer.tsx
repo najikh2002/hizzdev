@@ -17,7 +17,7 @@ const Footer = () => {
             <div className="flex gap-[33px]">
                 {footerSocialIcons.map((item, index) => (
                     <div key={index}>
-                        <a href={item.url}>
+                        <a href={item.url} target="_blank" rel="noopener noreferrer">
                             <Image 
                                 src={item.icon}
                                 width={30}
