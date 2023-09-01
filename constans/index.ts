@@ -187,7 +187,7 @@ export const footerSocialIcons: FooterSocialIcons[] = [
     },
     {
         icon: "/ficon-4.svg",
-        url: "hizbullahnajihan@gmail.com",
+        url: "mailto:hizbullahnajihan@gmail.com",
     },
 ]
 
