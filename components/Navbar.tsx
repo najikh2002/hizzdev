@@ -1,8 +1,24 @@
+"use client";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const Navbar = ({ styles }: {styles: string}) => {
+    const [scrollY, setScrollY] = useState(0);
+
+  const handleScroll = () => {
+    setScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
     return ( 
-        <nav className={`${styles} justify-between items-center top-0 right-0 h-[66px] w-full`}>
+        <nav className={`${styles} ${scrollY > 200 ? "bg-black/50" : "bg-transparent pt-[25px]"} justify-between items-center top-0 right-0 h-[66px] w-full transition-all duration-300`}>
            <Image 
             src={"/logo.svg"}
             width={40}

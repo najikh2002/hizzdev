@@ -3,7 +3,7 @@ import { AboutSection, ContactSection, Footer, HeroSection, Navbar, NavbarMobile
 export default function Home() {
   return (
     <main className="scroll-smooth">
-      <Navbar styles="bg-transparent pt-[5%] z-50 absolute hidden lg:flex px-[5%] xl:px-[10%] z-10" />
+      <Navbar styles="z-50 fixed hidden lg:flex px-[5%] xl:px-[10%] z-10" />
       <NavbarMobile />
       <HeroSection />
       <ShortDescSection />
